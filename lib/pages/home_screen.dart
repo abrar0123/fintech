@@ -117,73 +117,262 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Container(
-        padding: EdgeInsets.all(15),
-        height: 250,
-        color: Colors.green,
-        child: Card(
-          elevation: 5,
-          child: Padding(
-            padding: EdgeInsets.all(30),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'EasyPaisa',
-                      style:
-                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 20),
-                    Text(
-                      'MyAwards',
-                      style: TextStyle(
-                        fontSize: 19,
+      body: Scrollbar(
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(15),
+              height: 250,
+              color: Colors.green,
+              child: Card(
+                elevation: 5,
+                child: Padding(
+                  padding: EdgeInsets.all(30),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'EasyPaisa',
+                            style: TextStyle(
+                                fontSize: 23, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(width: 20),
+                          Text(
+                            'MyAwards',
+                            style: TextStyle(
+                              fontSize: 19,
+                            ),
+                          )
+                        ],
                       ),
-                    )
-                  ],
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            '********** ',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(width: 20),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Upgrade Account',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Your Balance ',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(width: 20),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'AddCash',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '********** ',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    SizedBox(width: 20),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Upgrade Account',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Your Balance ',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    SizedBox(width: 20),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'AddCash',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ],
-                )
-              ],
+              ),
             ),
-          ),
+            RightList(),
+            MoreCards(),
+          ],
         ),
       ),
     );
+  }
+}
+
+class RightList extends StatelessWidget {
+  const RightList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          padding: EdgeInsets.all(10),
+          child: Card(
+            color: Colors.white,
+            elevation: 5,
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.send_to_mobile,
+                    size: 40,
+                  ),
+                  SizedBox(height: 10),
+                  Text('Send Money'),
+                ],
+              ),
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(10),
+          child: Card(
+            color: Colors.white,
+            elevation: 5,
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.mobile_screen_share_sharp,
+                    size: 40,
+                  ),
+                  SizedBox(height: 10),
+                  Text('Bill Payment'),
+                ],
+              ),
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(10),
+          child: Card(
+            color: Colors.white,
+            elevation: 5,
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.mobile_friendly,
+                    size: 40,
+                  ),
+                  SizedBox(height: 10),
+                  Text('Packages'),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class MoreCards extends StatelessWidget {
+  const MoreCards({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return (Container(
+      padding: EdgeInsets.all(20),
+      child: Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text(
+                'More with easypaisa',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
+          Card(
+            elevation: 5,
+            color: Colors.white,
+            child: Column(
+              children: [
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Column(children: [
+                          Icon(Icons.mobile_friendly,
+                              color: Colors.green, size: 40),
+                          SizedBox(height: 15),
+                          Text(
+                            'Easyload',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ])),
+                    Container(
+                        padding: EdgeInsets.all(20),
+                        child: Column(children: [
+                          Icon(Icons.mobile_screen_share,
+                              color: Colors.green, size: 40),
+                          SizedBox(height: 15),
+                          Text(
+                            'EasyLoan',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ])),
+                    Container(
+                        padding: EdgeInsets.all(20),
+                        child: Column(children: [
+                          Icon(Icons.person_2_outlined,
+                              color: Colors.green, size: 50),
+                          SizedBox(height: 15),
+                          Text(
+                            'Invite& Earn',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ])),
+                  ],
+                ),
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                        padding: EdgeInsets.all(20),
+                        child: Column(children: [
+                          Icon(Icons.mobile_friendly,
+                              color: Colors.green, size: 40),
+                          SizedBox(height: 15),
+                          Text(
+                            'Savings',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ])),
+                    Container(
+                        padding: EdgeInsets.all(20),
+                        child: Column(children: [
+                          Icon(Icons.mobile_screen_share,
+                              color: Colors.green, size: 40),
+                          SizedBox(height: 15),
+                          Text(
+                            'Mini Apps',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ])),
+                    Container(
+                        padding: EdgeInsets.all(20),
+                        child: Column(children: [
+                          Icon(Icons.threed_rotation,
+                              color: Colors.green, size: 50),
+                          SizedBox(height: 15),
+                          Text(
+                            'See All',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ])),
+                  ],
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    ));
   }
 }
