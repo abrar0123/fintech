@@ -117,6 +117,73 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      body: Container(
+        padding: EdgeInsets.all(15),
+        height: 250,
+        color: Colors.green,
+        child: Card(
+          elevation: 5,
+          child: Padding(
+            padding: EdgeInsets.all(30),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'EasyPaisa',
+                      style:
+                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(width: 20),
+                    Text(
+                      'MyAwards',
+                      style: TextStyle(
+                        fontSize: 19,
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '********** ',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    SizedBox(width: 20),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Upgrade Account',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Your Balance ',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    SizedBox(width: 20),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        'AddCash',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
