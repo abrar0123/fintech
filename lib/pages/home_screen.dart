@@ -207,42 +207,54 @@ class RightList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          Container(
-            padding: EdgeInsets.all(10),
-            child: Card(
-              color: Colors.white,
-              elevation: 5,
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.send_to_mobile,
-                      size: 40,
-                    ),
-                    SizedBox(height: 10),
-                    Text('Send Money'),
-                  ],
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/sendMoney',
+                  arguments: {'screen': 'SendMoney'});
+            },
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Card(
+                color: Colors.white,
+                elevation: 5,
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.send_to_mobile,
+                        size: 40,
+                      ),
+                      SizedBox(height: 10),
+                      Text('Send Money'),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(10),
-            child: Card(
-              color: Colors.white,
-              elevation: 5,
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.mobile_screen_share_sharp,
-                      size: 40,
-                    ),
-                    SizedBox(height: 10),
-                    Text('Bill Payment'),
-                  ],
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/sendMoney',
+                  arguments: {'screen': 'Bills Payment'});
+            },
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Card(
+                color: Colors.white,
+                elevation: 5,
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.mobile_screen_share_sharp,
+                        size: 40,
+                      ),
+                      SizedBox(height: 10),
+                      Text('Bill Payment'),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -318,30 +330,42 @@ class MoreCards extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(children: [
-                          Icon(Icons.mobile_friendly,
-                              color: Colors.green, size: 40),
-                          SizedBox(height: 15),
-                          Text(
-                            'Easyload',
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ])),
-                    Container(
-                        padding: EdgeInsets.all(20),
-                        child: Column(children: [
-                          Icon(Icons.mobile_screen_share,
-                              color: Colors.green, size: 40),
-                          SizedBox(height: 15),
-                          Text(
-                            'EasyLoan',
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ])),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/sendMoney',
+                            arguments: {'screen': 'Easy Load'});
+                      },
+                      child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(children: [
+                            Icon(Icons.mobile_friendly,
+                                color: Colors.green, size: 40),
+                            SizedBox(height: 15),
+                            Text(
+                              'Easyload',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ])),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/sendMoney',
+                            arguments: {'screen': 'Easy Loan'});
+                      },
+                      child: Container(
+                          padding: EdgeInsets.all(20),
+                          child: Column(children: [
+                            Icon(Icons.mobile_screen_share,
+                                color: Colors.green, size: 40),
+                            SizedBox(height: 15),
+                            Text(
+                              'EasyLoan',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ])),
+                    ),
                     Container(
                         padding: EdgeInsets.all(20),
                         child: Column(children: [
@@ -356,7 +380,57 @@ class MoreCards extends StatelessWidget {
                   ],
                 ),
                 Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/sendMoney',
+                            arguments: {'screen': 'Insurance'});
+                      },
+                      child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(children: [
+                            Icon(Icons.workspaces_filled,
+                                color: Colors.green, size: 40),
+                            SizedBox(height: 15),
+                            Text(
+                              'Insurance',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ])),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/sendMoney',
+                            arguments: {'screen': 'Donations'});
+                      },
+                      child: Container(
+                          padding: EdgeInsets.all(20),
+                          child: Column(children: [
+                            Icon(Icons.domain_verification,
+                                color: Colors.green, size: 40),
+                            SizedBox(height: 15),
+                            Text(
+                              'Donations',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ])),
+                    ),
+                    Container(
+                        padding: EdgeInsets.all(20),
+                        child: Column(children: [
+                          Icon(Icons.person_2_outlined,
+                              color: Colors.green, size: 50),
+                          SizedBox(height: 15),
+                          Text(
+                            'Invite& Earn',
+                            style: TextStyle(fontSize: 13),
+                          ),
+                        ])),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                         padding: EdgeInsets.all(20),
@@ -369,17 +443,23 @@ class MoreCards extends StatelessWidget {
                             style: TextStyle(fontSize: 14),
                           ),
                         ])),
-                    Container(
-                        padding: EdgeInsets.all(20),
-                        child: Column(children: [
-                          Icon(Icons.mobile_screen_share,
-                              color: Colors.green, size: 40),
-                          SizedBox(height: 15),
-                          Text(
-                            'Mini Apps',
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ])),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/sendMoney',
+                            arguments: {'screen': 'Mini Apps'});
+                      },
+                      child: Container(
+                          padding: EdgeInsets.all(20),
+                          child: Column(children: [
+                            Icon(Icons.mobile_screen_share,
+                                color: Colors.green, size: 40),
+                            SizedBox(height: 15),
+                            Text(
+                              'Mini Apps',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ])),
+                    ),
                     Container(
                         padding: EdgeInsets.all(20),
                         child: Column(children: [

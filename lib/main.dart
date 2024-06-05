@@ -1,6 +1,8 @@
+import 'package:fintech/pages/confirm_pay.dart';
 import 'package:fintech/pages/home_screen.dart';
 import 'package:fintech/pages/myaccount_screen.dart';
 import 'package:fintech/pages/promotion_screen.dart';
+import 'package:fintech/pages/send_money.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +21,29 @@ class _MyStackState extends State<MyStack> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNav(),
+      home: StackNav(),
+    );
+  }
+}
+
+class StackNav extends StatefulWidget {
+  const StackNav({super.key});
+
+  @override
+  State<StackNav> createState() => _StackNavState();
+}
+
+class _StackNavState extends State<StackNav> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => BottomNav(),
+        '/sendMoney': (context) => SendMoneyScreen(),
+        '/confirmPay': (context) => ConfirmPaymentScreen(),
+      },
     );
   }
 }
