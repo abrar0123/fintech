@@ -117,7 +117,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Scrollbar(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
             Container(
@@ -160,7 +161,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             onPressed: () {},
                             child: Text(
                               'Upgrade Account',
-                              style: TextStyle(color: Colors.black),
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 12),
                             ),
                           ),
                         ],
@@ -201,69 +203,92 @@ class RightList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          padding: EdgeInsets.all(10),
-          child: Card(
-            color: Colors.white,
-            elevation: 5,
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.send_to_mobile,
-                    size: 40,
-                  ),
-                  SizedBox(height: 10),
-                  Text('Send Money'),
-                ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          Container(
+            padding: EdgeInsets.all(10),
+            child: Card(
+              color: Colors.white,
+              elevation: 5,
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.send_to_mobile,
+                      size: 40,
+                    ),
+                    SizedBox(height: 10),
+                    Text('Send Money'),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        Container(
-          padding: EdgeInsets.all(10),
-          child: Card(
-            color: Colors.white,
-            elevation: 5,
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.mobile_screen_share_sharp,
-                    size: 40,
-                  ),
-                  SizedBox(height: 10),
-                  Text('Bill Payment'),
-                ],
+          Container(
+            padding: EdgeInsets.all(10),
+            child: Card(
+              color: Colors.white,
+              elevation: 5,
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.mobile_screen_share_sharp,
+                      size: 40,
+                    ),
+                    SizedBox(height: 10),
+                    Text('Bill Payment'),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        Container(
-          padding: EdgeInsets.all(10),
-          child: Card(
-            color: Colors.white,
-            elevation: 5,
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.mobile_friendly,
-                    size: 40,
-                  ),
-                  SizedBox(height: 10),
-                  Text('Packages'),
-                ],
+          Container(
+            padding: EdgeInsets.all(10),
+            child: Card(
+              color: Colors.white,
+              elevation: 5,
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.blinds_closed_sharp,
+                      size: 40,
+                    ),
+                    SizedBox(height: 10),
+                    Text('Packages'),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-      ],
+          Container(
+            padding: EdgeInsets.all(10),
+            child: Card(
+              color: Colors.white,
+              elevation: 5,
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.mobile_screen_share_sharp,
+                      size: 40,
+                    ),
+                    SizedBox(height: 10),
+                    Text('Attach Bills'),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -303,7 +328,7 @@ class MoreCards extends StatelessWidget {
                           SizedBox(height: 15),
                           Text(
                             'Easyload',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(fontSize: 14),
                           ),
                         ])),
                     Container(
@@ -314,7 +339,7 @@ class MoreCards extends StatelessWidget {
                           SizedBox(height: 15),
                           Text(
                             'EasyLoan',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(fontSize: 14),
                           ),
                         ])),
                     Container(
@@ -325,7 +350,7 @@ class MoreCards extends StatelessWidget {
                           SizedBox(height: 15),
                           Text(
                             'Invite& Earn',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(fontSize: 13),
                           ),
                         ])),
                   ],
@@ -341,7 +366,7 @@ class MoreCards extends StatelessWidget {
                           SizedBox(height: 15),
                           Text(
                             'Savings',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(fontSize: 14),
                           ),
                         ])),
                     Container(
@@ -352,7 +377,7 @@ class MoreCards extends StatelessWidget {
                           SizedBox(height: 15),
                           Text(
                             'Mini Apps',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(fontSize: 14),
                           ),
                         ])),
                     Container(
@@ -363,7 +388,7 @@ class MoreCards extends StatelessWidget {
                           SizedBox(height: 15),
                           Text(
                             'See All',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(fontSize: 15),
                           ),
                         ])),
                   ],
